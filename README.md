@@ -4,7 +4,7 @@ This is a Python module that uses the PostgreSQL database to keep track of playe
 
 
 ## Recommendation
-It's better to run this on your virtual machine'
+It's better to run this on your virtual machine
 
 ## Initialization
 Log into your web server via SSH and be sure to have **Python 2** and **PostgreSQL** installed.
