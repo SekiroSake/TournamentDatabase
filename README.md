@@ -1,6 +1,6 @@
 #Introduction
 
-This is a Python module that uses the PostgreSQL database to keep track of players and matches in aS wiss-style   game tournament.
+This is a Python module that uses the PostgreSQL database to keep track of players and matches in a Swiss-style   game tournament.
 
 
 ## Recommendation
