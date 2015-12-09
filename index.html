@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Tournamentdatabase by pg707284828</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/pg707284828/TournamentDatabase">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Tournamentdatabase</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/pg707284828/TournamentDatabase/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/pg707284828/TournamentDatabase/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>This is a Python module that uses the PostgreSQL database to keep track of players and matches in aS wiss-style   game tournament.</p>
+
+<h2>
+<a id="recommendation" class="anchor" href="#recommendation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recommendation</h2>
+
+<p>It's better to run this on your virtual machine'</p>
+
+<h2>
+<a id="initialization" class="anchor" href="#initialization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initialization</h2>
+
+<p>Log into your web server via SSH and be sure to have <strong>Python 2</strong> and <strong>PostgreSQL</strong> installed.</p>
+
+<p>To initialize the required tables, run:</p>
+
+<pre><code>$ psql
+</code></pre>
+
+<pre><code>$ \i tournament.sql
+</code></pre>
+
+<p>To run a suite of unit tests, quit <strong>PostgreSQL</strong> with <code>\q</code> and then:</p>
+
+<pre><code>$ python tournament_test.py
+</code></pre>
+
+<h2>
+<a id="tables-available" class="anchor" href="#tables-available" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tables available</h2>
+
+<p><strong>PLAYERS</strong></p>
+
+<p>Includes the player's name and ID number.</p>
+
+<p><strong>MATCHES</strong></p>
+
+<p>ALL match results are recorded here with a match ID numer and the resulting winner or loser.</p>
+
+<p><strong>VIEW_WINS</strong> <em>(view)</em></p>
+
+<p>Keeps track of the number of wins for each player.</p>
+
+<p><strong>VIEW_LOSSES</strong> <em>(view)</em></p>
+
+<p>Keeps track of the number of losses for each player.</p>
+
+<p><strong>VIEW_MATCHES</strong> <em>(view)</em></p>
+
+<p>Keeps track of the count of matches each player has played.</p>
+
+<h2>
+<a id="running-a-tournament" class="anchor" href="#running-a-tournament" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running a tournament</h2>
+
+<p>Use the available Python functions, in this recommended order, to coordinate a game:</p>
+
+<table>
+<thead>
+<tr>
+<th>METHOD</th>
+<th>ACCEPTS</th>
+<th>PURPOSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>registerPlayer(name)</td>
+<td><em>name as string</em></td>
+<td>Adds a player to the database to be calculated in pairings and standings.</td>
+</tr>
+<tr>
+<td>countPlayers()</td>
+<td><em>(no input)</em></td>
+<td>Counts all registered players.</td>
+</tr>
+<tr>
+<td>swissPairings()</td>
+<td><em>(no input)</em></td>
+<td>Returns a list of players grouped into pairs, arranged according to their current standings. Players are paired with those with about the same number of wins.</td>
+</tr>
+<tr>
+<td>reportMatch(winner, loser)</td>
+<td>
+<em>winner as string</em>, <em>loser as string</em>
+</td>
+<td>Records the result of any given match.</td>
+</tr>
+<tr>
+<td>playerStandings()</td>
+<td><em>(no input)</em></td>
+<td>Returns the number of wins from all players.</td>
+</tr>
+</tbody>
+</table>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/pg707284828">pg707284828</a> can be found on <a href="https://github.com/pg707284828/TournamentDatabase">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
